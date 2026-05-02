@@ -1,0 +1,1 @@
+[{"description": "income", "amount": 100.01, "spending_type": "income"}, {"description": "groceries", "amount": 50.2, "spending_type": "expense"}, {"description": "another expense", "amount": 3.45, "spending_type": "expense"}]
