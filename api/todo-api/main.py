@@ -22,7 +22,7 @@ def post_todos():
         todos.append(todo)
         return todo, 201
     else:
-        return {"error": "message title required"}, 400
+        return {"error": "title required"}, 400
     
 @app.route('/todos/<int:id>', methods=['DELETE'])
 def delete_todo(id):
