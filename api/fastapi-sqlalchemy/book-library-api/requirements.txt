@@ -5,3 +5,4 @@ bcrypt
 python-jose
 passlib
 python-multipart
+alembic

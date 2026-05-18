@@ -22,6 +22,7 @@ class Book(Base):
     title = Column(String)
     author = Column(String)
     read = Column(Boolean)
+    rating = Column(Integer)
     owner_id = Column(Integer, ForeignKey('users.id'))
 
 class UserLogin(BaseModel):
@@ -33,7 +34,8 @@ class BookInput(BaseModel):
     author: str
     read: bool = False
 
-Base.metadata.create_all(engine)
+if __name__ == "__app__":
+    Base.metadata.create_all(engine)
 
 app = FastAPI()
 
