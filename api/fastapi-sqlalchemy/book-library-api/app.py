@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException, Header, Depends
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from sqlalchemy import create_engine, Column, Integer, String, ForeignKey, Boolean
 from sqlalchemy.orm import DeclarativeBase, Session
@@ -38,6 +39,12 @@ if __name__ == "__app__":
     Base.metadata.create_all(engine)
 
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 SECRET_KEY = "test-secret"
 
